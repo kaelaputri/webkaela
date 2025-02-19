@@ -3,13 +3,18 @@ include 'koneksi.php';
 
 if (isset($_GET['id'])) {
     $id_siswa = $_GET['id'];
-    $delete_query = "DELETE FROM siswa WHERE id_siswa = '$id_siswa'";
+    
+    // Query untuk menghapus data siswa
+    $query = "DELETE FROM siswa WHERE id_siswa = '$id_siswa'";
 
-    if (mysqli_query($koneksi, $delete_query)) {
-        echo "Siswa berhasil dihapus!";
-        header("Location: siswa.php");
+    if (mysqli_query($koneksi, $query)) {
+        echo "<script>alert('Data siswa berhasil dihapus!'); window.location='index.php';</script>";
     } else {
-        echo "Terjadi kesalahan: " . mysqli_error($koneksi);
+        echo "Error: " . mysqli_error($koneksi);
     }
+} else {
+    echo "ID siswa tidak ditemukan.";
 }
 ?>
+
+

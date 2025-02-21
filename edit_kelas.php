@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (mysqli_stmt_execute($stmt)) {
             echo "<script>
                     alert('Data kelas berhasil diperbarui');
-                    window.location.href = 'edit_kelas.php';
+                    window.location.href = 'kelas.php';
                   </script>";
         } else {
             echo "<script>

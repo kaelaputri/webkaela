@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
             if (mysqli_stmt_execute($stmt)) {
                 echo "<script>
                         alert('Data kelas berhasil dihapus');
-                        window.location.href = 'edit_kelas.php'; // Redirect ke halaman data kelas
+                        window.location.href = 'kelas.php'; // Redirect ke halaman data kelas
                       </script>";
             } else {
                 echo "<script>
